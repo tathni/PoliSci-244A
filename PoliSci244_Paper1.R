@@ -199,7 +199,7 @@ logit.plot(data_1990, "Excluded_Population_Perc", "Repression")
 
 
 
-# Linear regression models for 1990
+# Logistic regression models for 1990
 HIEF.1990 <- glm(Repression ~ HIEF, data=data_1990, family=binomial)
 FDI.1990 <- glm(Repression ~ FDI_Inflows_Perc_GDP, data=data_1990, family=binomial)
 Security.1990 <- glm(Repression ~ Security_Agencies, data=data_1990, family=binomial)
@@ -238,7 +238,7 @@ logit.plot(data_2000, "Security_Agencies", "Repression")
 logit.plot(data_2000, "Excluded_Population_Perc", "Repression")
 
 
-# Linear regression models for 2000
+# Logistic regression models for 2000
 HIEF.2000 <- glm(Repression ~ HIEF, data=data_2000, family=binomial)
 FDI.2000 <- glm(Repression ~ FDI_Inflows_Perc_GDP, data=data_2000, family=binomial)
 Security.2000 <- glm(Repression ~ Security_Agencies, data=data_2000, family=binomial)
