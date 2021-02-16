@@ -204,7 +204,7 @@ HIEF.1990 <- glm(Repression ~ HIEF, data=data_1990, family=binomial)
 FDI.1990 <- glm(Repression ~ FDI_Inflows_Perc_GDP, data=data_1990, family=binomial)
 Security.1990 <- glm(Repression ~ Security_Agencies, data=data_1990, family=binomial)
 Excluded.1990 <- glm(Repression ~ Excluded_Population_Perc, data=data_1990, family=binomial)
-glm.1990 <- glm(Repression ~ HIEF + FDI_Inflows_Perc_GDP + Security_Agencies + Excluded_Population_Perc,
+glm.1990 <- glm(Repression ~ Security_Agencies + Excluded_Population_Perc + HIEF + FDI_Inflows_Perc_GDP,
                 data=data_1990, family=binomial)
 
 summary(HIEF.1990)
@@ -215,14 +215,14 @@ summary(glm.1990)
 
 extract_eq(glm.1990, wrap=T) # Convert to usable text format via https://quicklatex.com/
            
-stargazer_1990_raw <- stargazer(HIEF.1990, FDI.1990, Security.1990, Excluded.1990, glm.1990,
+stargazer_1990_raw <- stargazer(Security.1990, Excluded.1990, HIEF.1990, FDI.1990,glm.1990,
                             title="1990: Logistic Regression Results for 36 Autocracies", align=T,
                             covariate.labels = c("Ethnic Fractionalization Index", "FDI Inflows (% GDP)",
                                                  "Regime Security Agencies","Excluded Population (%)"),
                             dep.var.labels = "Logit of Political Terror Occurrence",
                             type="html", out="Stargazer_1990_Logit.htm")
 
-stargazer_1990 <- stargazer(HIEF.1990, FDI.1990, Security.1990, Excluded.1990, glm.1990,
+stargazer_1990 <- stargazer(Security.1990, Excluded.1990, HIEF.1990, FDI.1990,  glm.1990,
                                 title="1990: Logistic Regression Results for 36 Autocracies", align=T,
                                 covariate.labels = c("Ethnic Fractionalization Index", "FDI Inflows (% GDP)",
                                                      "Regime Security Agencies","Excluded Population (%)"),
@@ -243,7 +243,7 @@ HIEF.2000 <- glm(Repression ~ HIEF, data=data_2000, family=binomial)
 FDI.2000 <- glm(Repression ~ FDI_Inflows_Perc_GDP, data=data_2000, family=binomial)
 Security.2000 <- glm(Repression ~ Security_Agencies, data=data_2000, family=binomial)
 Excluded.2000 <- glm(Repression ~ Excluded_Population_Perc, data=data_2000, family=binomial)
-glm.2000 <- glm(Repression ~ HIEF + FDI_Inflows_Perc_GDP + Security_Agencies + Excluded_Population_Perc,
+glm.2000 <- glm(Repression ~ Security_Agencies + Excluded_Population_Perc + HIEF + FDI_Inflows_Perc_GDP,
                 data=data_2000, family=binomial)
 
 summary(HIEF.2000)
@@ -254,14 +254,14 @@ summary(glm.2000)
 
 extract_eq(glm.2000, wrap=T)
 
-stargazer_2000_raw <- stargazer(HIEF.2000, FDI.2000, Security.2000, Excluded.2000, glm.2000,
+stargazer_2000_raw <- stargazer(Security.2000, Excluded.2000, HIEF.2000, FDI.2000, glm.2000,
                             title="2000: Logistic Regression Results for 38 Autocracies", align=T,
                             covariate.labels = c("Ethnic Fractionalization Index", "FDI Inflows (% GDP)",
                                                  "Regime Security Agencies","Excluded Population (%)"),
                             dep.var.labels = "Logit of Political Terror Occurrence",
                             type="html", out="Stargazer_2000_Logit.htm")
 
-stargazer_2000 <- stargazer(HIEF.2000, FDI.2000, Security.2000, Excluded.2000, glm.2000,
+stargazer_2000 <- stargazer(Security.2000, Excluded.2000, HIEF.2000, FDI.2000, glm.2000,
                                 title="2000: Logistic Regression Results for 38 Autocracies", align=T,
                                 covariate.labels = c("Ethnic Fractionalization Index", "FDI Inflows (% GDP)",
                                                      "Regime Security Agencies","Excluded Population (%)"),
