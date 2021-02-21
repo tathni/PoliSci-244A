@@ -61,6 +61,8 @@ stargazer <- stargazer(lm.fit,
                         type="html", out="Stargazer_Press.htm")
 
 
+extract_eq(lm.fit, wrap=T) # Convert to usable text format via https://quicklatex.com/
+
 
 
 # Prep data for odds ratios contingency tables
